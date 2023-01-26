@@ -16,6 +16,8 @@ const server = new grpc.Server();
 
 server.bind("0.0.0.0:4000", grpc.ServerCredentials.createInsecure());
 
+console.log("gRPC server running on localhost:4000");
+
 // Add services to server
 server.addService(todoPackage.Todo.service, {
   createTodo: createTodo,
